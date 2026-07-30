@@ -36,8 +36,49 @@
       display: none !important;
     }
   }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Print Button Example</title>
 
-        
+<style>
+  /* Styling to make the button look nice on the screen */
+  .print-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .print-btn:hover {
+    background-color: #0056b3;
+  }
+
+  /* PRINT RULES */
+  @media print {
+    /* Hide the print button on the paper */
+    .print-btn {
+      display: none !important;
+    }
+
+    /* Force the content to fit within the height of one page */
+    body {
+      max-height: 100vh; 
+      overflow: hidden; /* Prevents spilling onto page 2 */
+    }
+  }
+
+  /* Shrink the default printer margins to fit more on one page */
+  @page {
+    margin: 1cm; 
+  }
+    
     </style>
 </head>
 <body>

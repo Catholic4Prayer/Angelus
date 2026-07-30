@@ -11,10 +11,38 @@
         p {
             text-align: center;
         }
-    <button onclick="window.print()">Print</button>
+/* Styling to make the button look nice on the screen */
+  .print-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .print-btn:hover {
+    background-color: #0056b3;
+  }
+
+  /* PRINT RULES 
+    This tells the printer to hide the button and any other 
+    elements you don't want on the physical paper.
+  */
+  @media print {
+    .print-btn {
+      display: none !important;
+    }
+  }
+
+        
     </style>
 </head>
 <body>
+<button class="print-btn" onclick="window.print()">🖨 Print Page</button>
+   
     <h1>The Angelus</h1>
     <h3>Said at 12am/6am/12pm/6pm</h3>
   <p>The Angel of the Lord declared unto Mary. 
